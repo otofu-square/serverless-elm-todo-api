@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "elm": "^0.18.0",
+    "elm-serverless": "^4.0.0",
+    "serverless": "^1.24.1",
+    "serverless-offline": "^3.16.0",
+    "serverless-webpack": "^4.1.0"
+  }
+}
