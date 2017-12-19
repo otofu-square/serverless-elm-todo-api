@@ -1,10 +1,9 @@
-module.exports.hello = (event, context, callback) => {
-  const response = {
-    statusCode: 200,
-    body: JSON.stringify({
-      message: 'Go Serverless v1.0! Your function executed successfully!',
-      input: event,
-    }),
-  };
-  callback(null, response);
-};
+const elmServerless = require('elm-serverless');
+const elm = require('./API.elm');
+
+module.exports.handler = elmServerless.httpApi({
+  handler: elm.Hello.API,
+  requestPort: 'requestPort',
+  responsePort: 'responsePort',
+});
+

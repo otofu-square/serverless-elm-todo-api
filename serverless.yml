@@ -16,8 +16,9 @@ custom:
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/Hello/api.handler
     events:
       - http:
-          path: users/create
-          method: get
+          integration: lambda-proxy
+          path: /
+          method: ANY
