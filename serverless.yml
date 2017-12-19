@@ -16,7 +16,7 @@ custom:
 
 functions:
   hello:
-    handler: src/Hello/api.handler
+    handler: src/api.handler
     events:
       - http:
           integration: lambda-proxy

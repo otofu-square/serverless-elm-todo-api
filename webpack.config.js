@@ -20,11 +20,12 @@ const config = {
       },
     ],
   },
+  plugins: [],
 };
 
 config.plugins =
   process.env.NODE_ENV === 'production'
-    ? config.plugins || []
+    ? config.plugins
     : config.plugins.push(new UglifyJsPlugin());
 
 module.exports = config;
