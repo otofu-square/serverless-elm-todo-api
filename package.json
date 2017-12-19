@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "deploy": "NODE_ENV=production serverless deploy",
+    "start": "serverless offline"
+  },
   "devDependencies": {
     "elm": "^0.18.0",
     "elm-serverless": "^4.0.0",
