@@ -1,20 +1,21 @@
 port module Hello.API exposing (main)
 
 import Serverless
-import Serverless.Conn exposing (respond, textBody)
+import Conn exposing (..)
+import Router exposing (router, urlParser)
 
 
-main : Serverless.Program () () () () ()
+main : Serverless.Program () () Route () ()
 main =
     Serverless.httpApi
         { configDecoder = Serverless.noConfig
         , initialModel = ()
-        , parseRoute = Serverless.noRoutes
+        , parseRoute = urlParser
         , update = Serverless.noSideEffects
         , interop = Serverless.noInterop
-        , endpoint = respond ( 200, textBody "Hello World" )
         , requestPort = requestPort
         , responsePort = responsePort
+        , endpoint = router
         }
 
 
